@@ -1,0 +1,135 @@
+Q1. Write a Python Program to Add Two Matrices?
+Ans:-
+Here we have written a function as below to add matrix of 
+def add_matrix(matrix1,matrix2):
+    if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]):
+        print("error: matrix must have same dimension")
+        return None
+    
+    result=[]
+    for i in range(len(matrix1)):
+        row=[]
+        for j in range(len(matrix1[0])):
+            row.append(matrix1[i][j]+matrix2[i][j])
+        result.append(row)
+    return result
+matrix1=[[1,2,3],
+         [4,5,6],
+         [7,8,9]]
+
+matrix2=[[9,8,7],
+         [6,5,4],
+         [3,2,1]]
+
+result_matrix=add_matrix(matrix1,matrix2)
+
+if result_matrix:
+    print("Result")
+    for row in result_matrix:
+        print(row)
+
+#In this example, the add_matrices function takes two matrices as input and returns their sum if they have the same dimensions. The program also includes an example usage with two matrices, matrix1 and matrix2, and prints the resulting sum matrix if it exists.
+
+Q2. Write a Python Program to Multiply Two Matrices?
+Ans:-
+here we have written function multiply_matrix as below where you can add two matrixs as below.
+
+def multiply_matrix(matrix1,matrix2):
+    if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]):
+        print("error: matrix must have same dimension")
+        return None
+    
+    result=[]
+    for i in range(len(matrix1)):
+        row=[]
+        for j in range(len(matrix1[0])):
+            row.append(matrix1[i][j]*matrix2[i][j])
+        result.append(row)
+    return result
+matrix1=[[1,2,3],
+         [4,5,6],
+         [7,8,9]]
+
+matrix2=[[9,8,7],
+         [6,5,4],
+         [3,2,1]]
+
+result_matrix=multiply_matrix(matrix1,matrix2)
+
+if result_matrix:
+    print("Result")
+    for row in result_matrix:
+        print(row)
+#In this example, the multiply_matrices function takes two matrices as input and returns their product if the dimensions are valid for matrix multiplication. The program also includes an example usage with two matrices, matrix1 and matrix2, and prints the resulting product matrix if it exists.
+
+Q3. Write a Python Program to Transpose a Matrix?
+Ans:-
+Here we have writen function to transpose a matrix as below .
+def transpose_matrix(matrix):
+    row=len(matrix)
+    col=len(matrix[0])
+    
+    
+    transposed_matrix=[[0 for _ in range(row)] for _ in range(col)]
+    
+    
+    for i in range(row):
+        for j in range(col):
+            transposed_matrix[j][i]=matrix[i][j]
+    return transposed_matrix
+
+matrix=[[1,2,3], [4,5,6]]
+
+transposed=transpose_matrix(matrix)
+
+print("oroginal matrix")
+for row in matrix:
+    print(row)
+    
+    
+
+print("transposed matrix")
+for row in transposed:
+    print(row)
+    
+#outside the function, the example matrix matrix is defined. The transpose_matrix function is called with matrix as an argument, and the resulting transposed matrix is stored in transposed. The program then prints both the original matrix and the transposed matrix for comparison.
+
+Q4 . Write a Python Program to Sort Words in Alphabetic Order?
+Ans:-
+Here we have written function for sorting words alphabetically as below.
+
+def short_alphabet(words):
+    shorted_words=sorted(words)
+    return shorted_words
+word_list=input("enter you words to be sorted :").split()
+
+shorted_words=short_alphabet(word_list)
+
+
+print("word in alphabetical order")
+for words in shorted_words:
+    print(words)
+
+# example usage, the program prompts the user to enter a list of words separated by spaces. The input is then split into individual words using the split() method, which splits the string into a list at each space character. The sort_words function is called with the word_list as an argument, and the resulting sorted words are stored in the sorted_words variable.
+ the program prints each word from the sorted_words list in alphabetical order.
+
+
+
+Q5. Write a Python Program to Remove Punctuation From a String?
+Ans:-
+Here we have written function to remove panctuation from a string as below.
+import string
+
+def remove_punctuation(text):
+    translator=str.maketrans('','', string.punctuation)
+    text_without_panctuation=text.translate(translator)
+    return text_without_panctuation
+
+input_string=input("enter your string")
+
+result_string=remove_punctuation(input_string)
+
+print(f"this is original string:    ",input_string)
+print(f"string without puncutation:   ",result_string)
+
+#the program prompts the user to enter a string. The input string is passed to the remove_punctuation function, and the resulting string without punctuation is stored in the result_string variable
